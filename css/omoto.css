@@ -24,6 +24,8 @@ p{
 
 .navbar{
     padding: 15px;
+    background: rgb(236, 237, 232);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .navbar-brand{
@@ -49,6 +51,7 @@ p{
 
 .omoto-issue-content{
     text-align: center;
+    margin-top: 30px;
 }
 
 .issues{
