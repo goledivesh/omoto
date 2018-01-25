@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Welcome To Omoto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font Awesome  -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="css/omoto.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Antic Didone' rel='stylesheet'>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-light sticky-top">
+        <div class="container-fluid">
+            <a href="#" class="navbar-brand">
+                <img src="images/omoto_logo.png" width="55" alt="logo">&nbsp;<span style="color: rgb(116, 116, 115)">Omoto</span>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="myNav">
+                <ul class="navbar-nav ">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link"><i class="fa fa-home"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link"><i class="fa fa-user"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link"><i class="fa fa-bell"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="omoto-issue-content container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="issues issues-open">
+                    <h1>48</h1>
+                </div>
+                <p>Issues Open</p>
+            </div>
+            <div class="col-md-4">
+                <div class="issues issues-wip">
+                    <h1>25</h1>
+                </div>
+                <p>Issues WIP</p>
+            </div>
+            <div class="col-md-4">
+                <div class="issues issues-resolved">
+                    <h1>16</h1>
+                </div>
+                <p>Issues Resolved</p>
+
+            </div>
+        </div>
+    </section>
+    <section class="barChart">
+       <div class="row">
+        <div id="myDiv"></div>
+        </div>
+    </section>
+
+    <script>
+        var trace1 = {
+            x: ['Medical Treatment', 'Nursing & Care', 'Food & Beverages', 'Maintenance'],
+            y: [16, 16, 20, 16],
+            marker: {
+                color: ['rgb(252, 128, 142)', 'rgb(252, 128, 142)', 'rgb(252, 128, 142)', 'rgb(252, 128, 142)', 'rgb(252, 128, 142)']
+            },
+            type: 'bar'
+            
+        };
+
+        var data = [trace1];
+
+        var layout = {
+            title: 'Open Issues By Department'
+        };
+
+        Plotly.newPlot('myDiv', data, layout);
+    </script>
+</body>
